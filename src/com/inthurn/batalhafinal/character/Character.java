@@ -5,6 +5,8 @@ public abstract class Character {
     private Integer lifePoints;
     private Integer attackPoints;
     private Integer defensePoints;
+    private Boolean isDead;
+
 
 
     public Character(String name) {
@@ -37,6 +39,15 @@ public abstract class Character {
 
     public Integer getAttackPoints() {
         return attackPoints;
+    }
+
+    public Boolean getDead() {
+
+        return isDead;
+    }
+
+    public void setDead(Boolean dead) {
+        isDead = dead;
     }
 
     public void setAttackPoints(Integer attackPoints) {

@@ -3,17 +3,20 @@ package com.inthurn.batalhafinal.character;
 public class Hero extends Character{
     private PathType path;
     private GenderType gender;
-    //private Weapon weapon;
+    private Weapon weapon;
     private HeroClass heroClass;
 
-    public Hero(String name, HeroClass heroClass, GenderType gender) {
+
+    public Hero(String name, HeroClass heroClass, GenderType gender, WeaponType weaponType) {
         super(name);
         this.heroClass = heroClass;
         this.setLifePoints(heroClass.getLifePoints());
-        this.setDefensePoints(heroClass.getDefense());
-        this.setAttackPoints(heroClass.getAttack());
+        this.weapon = new Weapon(weaponType);
+        this.setDefensePoints(heroClass.getDefense() + this.weapon.getDefenseBonus());
+        this.setAttackPoints(heroClass.getAttack() + this.weapon.getAttackBonus());
         this.path = path;
         this.gender = gender;
+        this.setDead(false);
     }
 
     public PathType getPath() {
@@ -40,11 +43,21 @@ public class Hero extends Character{
         this.heroClass = heroClass;
     }
 
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+
+
     @Override
     public String toString() {
         return "Hero{" +
                 "path=" + path +
                 ", gender=" + gender +
+                ", weapon=" + weapon +
                 ", heroClass=" + heroClass +
                 '}';
     }
