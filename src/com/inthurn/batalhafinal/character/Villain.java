@@ -16,6 +16,11 @@ public class Villain extends Character {
         this.setDead(false);
     }
 
+    @Override
+    public Integer attack() {
+        return null;
+    }
+
     private final Weapon randomWeapon() {
         Random random = new Random();
         WeaponType choice;

@@ -1,8 +1,10 @@
 package com.inthurn.batalhafinal.combatsystem;
 
 import com.inthurn.batalhafinal.character.*;
+import com.inthurn.batalhafinal.utils.DiceRoll;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Combat implements CombatActions {
     private Difficulty difficulty;
@@ -15,12 +17,6 @@ public class Combat implements CombatActions {
         this.villain = villain;
     }
 
-    @Override
-    public Integer rollDice() {
-        Random random = new Random();
-        Integer dice = random.nextInt(20);
-        return dice;
-    }
 
     @Override
     public void setDifficultyBonus() {
@@ -32,7 +28,24 @@ public class Combat implements CombatActions {
     }
 
     @Override
-    public void battle(Hero hero, Villain villain) {
+    public void battle() {
+        Scanner scanner = new Scanner(System.in);
+        Integer option;
+        Integer dice;
+        while(hero.getDead() == false){
+            System.out.println("Insira uma ação");
+            System.out.println("1 - Atacar");
+            System.out.println("2 - Fugir");
+            option = scanner.nextInt();
+            if(option == 1){
+                dice = DiceRoll.roll();
+                if(dice == 1){
+                    System.out.println("Você errou!");
+                }
+
+            }
+
+        };
 
 
     }

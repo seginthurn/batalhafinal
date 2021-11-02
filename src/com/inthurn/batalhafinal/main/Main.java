@@ -7,14 +7,11 @@ public class Main {
         Hero hero = new Hero("Gabriel", HeroClass.WARRIOR, GenderType.MALE, WeaponType.WARHAMMER );
         Villain villain = new Villain("Orc", VillainClass.MEDIC_ORC);
         Combat combat = new Combat(hero, villain, Difficulty.HARD);
+        combat.battle();
 
         System.out.println(hero.getAttackPoints());
         System.out.println(villain.getAttackPoints());
-        combat.setDifficultyBonus();
 
-
-        System.out.println(hero.getAttackPoints());
-        System.out.println(villain.getAttackPoints());
 
 
 
