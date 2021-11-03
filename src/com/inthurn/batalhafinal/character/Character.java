@@ -1,13 +1,11 @@
 package com.inthurn.batalhafinal.character;
 
-public abstract class Character implements Fightable{
+public abstract class Character {
     private String name;
     private Integer lifePoints;
     private Integer attackPoints;
     private Integer defensePoints;
     private Boolean isDead;
-
-
 
     public Character(String name) {
         this.name = name;

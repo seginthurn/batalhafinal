@@ -2,7 +2,7 @@ package com.inthurn.batalhafinal.character;
 
 import com.inthurn.batalhafinal.utils.DiceRoll;
 
-public class Hero extends Character{
+public class Hero extends Character {
     private PathType path;
     private GenderType gender;
     private Weapon weapon;
@@ -21,12 +21,6 @@ public class Hero extends Character{
         this.setDead(false);
     }
 
-    @Override
-    public Integer attack() {
-        Integer diceRoll = DiceRoll.roll();
-        Integer damage = this.getAttackPoints() + diceRoll;
-        return diceRoll;
-    }
 
     public PathType getPath() {
         return path;

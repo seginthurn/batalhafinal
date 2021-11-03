@@ -16,15 +16,15 @@ public class Villain extends Character {
         this.setDead(false);
     }
 
-    @Override
-    public Integer attack() {
-        return null;
-    }
 
     private final Weapon randomWeapon() {
         Random random = new Random();
         WeaponType choice;
-        switch (random.nextInt(8)) {
+        Integer option = random.nextInt(8);
+        if(option == 0){
+            option = random.nextInt(8);
+        }
+        switch (option) {
             case 1:
                 choice = WeaponType.SWORD;
                 break;
@@ -66,6 +66,7 @@ public class Villain extends Character {
         return villainWeapon;
 
     }
+
 
 
     @Override
