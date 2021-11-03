@@ -17,6 +17,20 @@ public class Villain extends Character {
     }
 
 
+    @Override
+    public void showStatus() {
+        System.out.println("\n");
+        System.out.println("----------------------------------------------");
+        System.out.println("Inimigo: " + this.villainClass.getVilainName());
+        System.out.println("Classe: " + this.villainClass.get);
+        System.out.println("Arma equipada: " + this.getVillainWeapon().getWeaponName());
+        System.out.println("Pontos de Vida: " + this.getLifePoints());
+        System.out.println("Pontos da Ataque: " + this.getAttackPoints());
+        System.out.println("Pontos de Defesa: " + this.getDefensePoints());
+        System.out.println("----------------------------------------------");
+        System.out.println("\n");
+    }
+
     private final Weapon randomWeapon() {
         Random random = new Random();
         WeaponType choice;
@@ -53,21 +67,29 @@ public class Villain extends Character {
                 return null;
         }
 
-        //SWORD("Espada", 7, 5),
-        // AXE("Machado", 8, 4),
-        // WARHAMMER("Machado de Guerra", 10, 2),
-        // CLUB ("Clava", 9, 3),
-        // BOW_ARROW ("Arco e Flecha" , 12, 1),
-        // CROSSBOW_BOLTS("Besta e Virotes", 11, 2),
-        // STAFF ("Cajado", 8,5),
-        // MAGIC_BOOK ("Livro Mágico", 9, 4);
+
+
 
         Weapon villainWeapon = new Weapon(choice);
         return villainWeapon;
 
     }
 
+    public VillainClass getVillainClass() {
+        return villainClass;
+    }
 
+    public void setVillainClass(VillainClass villainClass) {
+        this.villainClass = villainClass;
+    }
+
+    public Weapon getVillainWeapon() {
+        return villainWeapon;
+    }
+
+    public void setVillainWeapon(Weapon villainWeapon) {
+        this.villainWeapon = villainWeapon;
+    }
 
     @Override
     public String toString() {

@@ -1,6 +1,6 @@
 package com.inthurn.batalhafinal.character;
 
-public abstract class Character {
+public abstract class Character implements CharActions{
     private String name;
     private Integer lifePoints;
     private Integer attackPoints;

@@ -21,6 +21,19 @@ public class Hero extends Character {
         this.setDead(false);
     }
 
+    @Override
+    public void showStatus() {
+        System.out.println("\n");
+        System.out.println("----------------------------------------------");
+        System.out.println("Herói: " + this.getName());
+        System.out.println("Classe: " + this.getHeroClass().getType());
+        System.out.println("Arma equipada: " + this.getWeapon().getWeaponName());
+        System.out.println("Pontos de Vida: " + this.getLifePoints());
+        System.out.println("Pontos da Ataque: " + this.getAttackPoints());
+        System.out.println("Pontos de Defesa: " + this.getDefensePoints());
+        System.out.println("----------------------------------------------");
+        System.out.println("\n");
+    }
 
     public PathType getPath() {
         return path;

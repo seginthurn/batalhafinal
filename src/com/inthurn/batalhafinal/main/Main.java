@@ -14,6 +14,11 @@ public class Main {
         Villain villain = new Villain("Orc", VillainClass.MEDIC_ORC);
         Combat combat = new Combat(hero, villain, Difficulty.HARD);
         combat.battle();
+        System.out.println("Novo Vilão");
+        Villain villain2 = new Villain("Orc 2", VillainClass.WAR_ORC);
+
+
+
 
 
 

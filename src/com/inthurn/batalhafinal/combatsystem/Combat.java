@@ -16,6 +16,7 @@ public class Combat implements CombatActions {
         this.difficulty = difficulty;
         this.hero = hero;
         this.villain = villain;
+        this.setDifficultyBonus();
     }
 
 
@@ -37,11 +38,24 @@ public class Combat implements CombatActions {
         while (hero.getDead() == false && villain.getDead() == false) {
             System.out.println("Insira uma ação");
             System.out.println("1 - Atacar");
-            System.out.println("2 - Fugir");
+            System.out.println("2 - Ver Status");
+            System.out.println("3 - Olhar para o inimigo");
+            System.out.println("3 - Fugir");
             option = scanner.nextInt();
-            if (option == 2) {
-                System.out.println(this.hero.getPath().getDiesMessage());
-                this.hero.setDead(true);
+
+            switch (option){
+                case 2:
+                    this.hero.showStatus();
+                    continue;
+                case 3:
+                    this.villain.showStatus();
+                    continue;
+                case 4:
+                    System.out.println("você fugiu!");
+                    this.hero.setDead(true);
+                    return;
+                default:
+                    break;
             }
             System.out.println("Rolando os dados... ");
             dice = DiceRoll.roll();
@@ -49,6 +63,7 @@ public class Combat implements CombatActions {
             attack(hero, dice);
 
             if (villain.getDead() == true) {
+                System.out.println("Morreu!");
                 break;
             }
 
@@ -74,10 +89,15 @@ public class Combat implements CombatActions {
         if (dice == 20) {
             damage = (int) this.hero.getAttackPoints() + dice;
         } else if (dice > 1 || dice < 20) {
+            System.out.println("\n");
+            System.out.println("----------------------------------------------------");
             System.out.println("Dados " + dice);
             System.out.println("Defesa do vilão " + this.villain.getDefensePoints());
-            System.out.println("Ataque do herói " + (this.hero.getAttackPoints() + dice));
-            damage = (int) (this.hero.getAttackPoints() + dice) - this.villain.getDefensePoints();
+            System.out.println("Ataque do herói " + this.hero.getAttackPoints());
+            damage = ((this.hero.getAttackPoints() + dice) - this.villain.getDefensePoints());
+            System.out.println("Dano: " + damage );
+            System.out.println("----------------------------------------------------");
+
         }
         System.out.println(damage);
         this.villain.setLifePoints(this.villain.getLifePoints() - damage);
@@ -86,7 +106,7 @@ public class Combat implements CombatActions {
             this.villain.setDead(true);
             System.out.println("Parabéns o vilão morreu!");
         } else {
-            System.out.println("O inimigo sofreu " + damage + " de dano e agora tem" + this.villain.getLifePoints() + " pontos de vida");
+            System.out.println("O inimigo sofreu " + damage + " de dano e agora tem " + this.villain.getLifePoints() + " pontos de vida");
         }
 
     }
@@ -101,7 +121,7 @@ public class Combat implements CombatActions {
             System.out.println("O inimigo acertou um ataque crítico! Você sofreu " + damage + " de dano e agora possui " + hero.getLifePoints() + " pontos de vida");
             this.hero.setLifePoints(this.hero.getLifePoints() - damage);
         } else if (dice > 1 || dice < 20) {
-            damage = (int) (this.villain.getAttackPoints() + dice) - this.hero.getDefensePoints();
+            damage = (this.villain.getAttackPoints() + dice) - this.hero.getDefensePoints();
         }
 
         this.hero.setLifePoints(this.hero.getLifePoints() - damage);
