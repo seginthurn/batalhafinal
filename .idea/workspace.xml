@@ -2,38 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c43bb0e-bf43-4df1-88ed-ea6b4f3e2525" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/storytelling/Story.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/utils/CheckNumeric.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/utils/HeroCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/utils/Keyboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/CharCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/CharCreator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/GenderType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/Hero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/Hero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/HeroClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/PathType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/PathType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/Villain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/Villain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/VillainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/VillainClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/Weapon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/WeaponType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/character/WeaponType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/combatsystem/Combat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/combatsystem/Combat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/combatsystem/CombatActions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/combatsystem/CombatActions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/combatsystem/Difficulty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/combatsystem/Difficulty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/utils/DiceRoll.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/utils/DiceRoll.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/CharCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/CharCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/GenderType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/SexType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/HeroClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/CharClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/PathType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/PathType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/Villain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/Villain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/VillainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/VillainClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/Weapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/WeaponType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/WeaponType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/utils/Keyboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/batalhafinal/com/inthurn/batalhafinal/utils/Keyboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/HeroCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/character/HeroCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/combatsystem/Combat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/combatsystem/Combat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/combatsystem/CombatActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/combatsystem/CombatActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/combatsystem/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/combatsystem/Difficulty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/utils/DiceRoll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/utils/DiceRoll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/storytelling/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/storytelling/Story.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/utils/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/inthurn/batalhafinal/utils/Keyboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +87,8 @@
       <workItem from="1635906304378" duration="11000" />
       <workItem from="1636221154507" duration="26955000" />
       <workItem from="1636250225392" duration="372000" />
+      <workItem from="1636327852084" duration="103000" />
+      <workItem from="1636328173363" duration="531000" />
     </task>
     <servers />
   </component>

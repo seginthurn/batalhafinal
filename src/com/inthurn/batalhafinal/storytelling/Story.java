@@ -20,12 +20,14 @@ public record Story(Hero hero,
 
 
         System.out.println("\n \n \n \n \n \n \n \n \n \n");
+        System.out.println("--------------------------");
         System.out.println("A noite se aproxima, a lua já surge no céu, estrelas vão se acendendo, e sob a luz do crepúsculo você está prestes a entrar na fase final da sua missão.");
 
         System.out.println("Você olha para o portal à sua frente, e sabe que a partir desse ponto, sua vida mudará para sempre.");
 
         Keyboard.pressEnterToContinue();
 
+        System.out.println("--------------------------");
         System.out.println("Memórias do caminho percorrido para chegar até aqui invadem sua mente." +
                            "\nVocê se lembra de todos os inimigos já derrotados para alcançar o covil do líder maligno.");
 
@@ -33,7 +35,7 @@ public record Story(Hero hero,
                            "\nVocê está a um passo de encerrar para sempre esse mal.");
 
         Keyboard.pressEnterToContinue();
-
+        System.out.println("--------------------------");
         System.out.println("Buscando uma injeção de ânimo, você se força a lembrar o que te trouxe até aqui...");
         System.out.println();
         System.out.println("Escolha sua motivação para invadir a caverna do inimigo e derrotá-lo: ");
@@ -52,6 +54,7 @@ public record Story(Hero hero,
                 }
             }
             if (pathChoice.equals(PathType.VENGEANCE)) {
+                System.out.println("--------------------------");
                 System.out.println("""
                         Imagens daquela noite trágica invadem sua mente. Você nem precisa se esforçar
                         para lembrar, pois essas memórias estão sempre presentes, mesmo que de pano de fundo,
@@ -63,6 +66,7 @@ public record Story(Hero hero,
                 System.out.println("O maldito líder finalmente pagará por tanto mal causado na vida de tantos (e principalmente na sua).");
 
             } else {
+                System.out.println("--------------------------");
                 System.out.println("""
                         Você já consegue visualizar na sua mente o povo da cidade te recebendo de braços
                         abertos, bardos criando canções sobre seus feitos heróicos, nobres te presenteando com jóias e
@@ -78,6 +82,7 @@ public record Story(Hero hero,
             this.hero.setPath(pathChoice);
         }
 
+        System.out.println("--------------------------");
         System.out.println("""
                 Inspirado pelo motivo que te trouxe até aqui, você sente seu coração ardendo em chamas, suas
                 mãos formigarem em volta da sua arma. Você a segura com firmeza. Seu foco está renovado.""");
@@ -85,6 +90,7 @@ public record Story(Hero hero,
         System.out.println("Você avança pelo portal.");
         Keyboard.pressEnterToContinue();
 
+        System.out.println("--------------------------");
         System.out.println("""
                 A escuridão te envolve. Uma iluminação muito fraca entra pelo portal às suas costas. À sua
                 frente, só é possível perceber que você se encontra em um corredor extenso.""");
@@ -94,12 +100,14 @@ public record Story(Hero hero,
 
         done = false;
         while (!done) {
+            System.out.println("--------------------------");
             System.out.println("Seguir em frente ou desistir?");
             System.out.println("1 - Seguir em frente!");
             System.out.println("2 - Desistir...");
             option = Keyboard.scanInteger();
             switch (option) {
                 case 1 -> {
+                    System.out.println("--------------------------");
                     System.out.println("""
                             Você caminha, atento a todos os seus sentidos, por vários metros, até visualizar a frente
                             uma fonte de luz, que você imagina ser a chama de uma tocha, vindo de dentro de uma porta
@@ -107,6 +115,7 @@ public record Story(Hero hero,
                     Keyboard.pressEnterToContinue();
                 }
                 case 2 -> {
+                    System.out.println("--------------------------");
                     System.out.println("O medo invade o seu coração e você sente que ainda não está à altura do desafio.\n" +
                             "Você se volta para a noite lá fora e corre em direção à segurança.");
                     GameLogo.gameOver();
@@ -114,15 +123,17 @@ public record Story(Hero hero,
                 }
                 default -> {
                     System.out.println();
+                    System.out.println("--------------------------");
                     System.out.println("Seu destino conta com sua ação...");
                     continue;
                 }
             }
             done = true;
         }
-
+        System.out.println("--------------------------");
         System.out.println("Você se pergunta se dentro dessa sala pode haver inimigos, ou alguma armadilha, e pondera\n" +
                 "sobre como passar pela porta.");
+        Keyboard.pressEnterToContinue();
         done = false;
         while (!done) {
             System.out.println("1 - Andar cuidadosamente, não quero chamar atenção...");
@@ -131,6 +142,7 @@ public record Story(Hero hero,
             option = Keyboard.scanInteger();
             switch (option) {
                 case 1 -> {
+                    System.out.println("--------------------------");
                     System.out.println("""
                             Você toma cuidado e vai caminhando vagarosamente em direção à luz. Quando você
                             pisa exatamente embaixo da porta, você sente o chão ceder levemente, como se tivesse pisado
@@ -143,11 +155,13 @@ public record Story(Hero hero,
                     Keyboard.pressEnterToContinue();
                 }
                 case 2 -> {
+                    System.out.println("--------------------------");
                     System.out.println("Você se concentra e pula em direção à luz, saltando de antes da porta até o interior\n" +
                             "da sala.");
                     Keyboard.pressEnterToContinue();
                 }
                 case 3 -> {
+                    System.out.println("--------------------------");
                     System.out.println("""
                             Você respira fundo e desata a correr em direção à sala. Quando passa pela porta,
                             sente que pisou em uma pedra solta, mas não dá muita importância e segue para dentro da sala,
@@ -158,12 +172,14 @@ public record Story(Hero hero,
                     Keyboard.pressEnterToContinue();
                 }
                 default -> {
+                    System.out.println("--------------------------");
                     System.out.println("Seja forte! você precisa tomar uma decisão....");
                     continue;
                 }
             }
             done = true;
         }
+        System.out.println("--------------------------");
         System.out.println("""
                 Você se encontra sozinho em uma sala quadrada, contendo uma porta em cada parede. Uma
                 delas foi aquela pela qual você entrou, que estava aberta, e as outras três estão fechadas. A
@@ -174,10 +190,11 @@ public record Story(Hero hero,
                 enfrentar o líder.""");
         Keyboard.pressEnterToContinue();
 
+        System.out.println("--------------------------");
         System.out.println("Você se dirige para a porta à direita.");
         Keyboard.pressEnterToContinue();
 
-
+        System.out.println("--------------------------");
         System.out.println("""
                 Você se aproxima, tentando ouvir o que acontece porta adentro, mas não
                 escuta nada. Segura com mais força sua arma com uma mão, enquanto empurra a porta com a
@@ -187,6 +204,7 @@ public record Story(Hero hero,
                 para espalhar o terror nas cidades e vilas da região.""");
         Keyboard.pressEnterToContinue();
 
+        System.out.println("--------------------------");
         System.out.println("""
                 Enquanto seu olhar percorre a sala, você ouve a porta se fechando e gira rapidamente para olhar
                 para trás. Ali, de pé entre você e a porta fechada, bloqueando o caminho do seu destino, está um
@@ -200,6 +218,7 @@ public record Story(Hero hero,
         warOrcFight.battle();
 
         System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
+        System.out.println("--------------------------");
         System.out.println("Após derrotar o Armeiro, você percebe que seus equipamentos estão muito danificados, e olha\n" +
                 "em volta, encarando todas aquelas peças de armaduras resistentes e em ótimo estado.");
         System.out.println("Pegar equipamentos? ");
@@ -210,6 +229,7 @@ public record Story(Hero hero,
             option = Keyboard.scanInteger();
             switch (option) {
                 case 1 -> {
+                    System.out.println("--------------------------");
                     System.out.println("""
                             Você resolve usar os equipamentos do
                             inimigo contra ele, e trocar algumas peças suas, que estavam danificadas, pelas peças de
@@ -221,11 +241,13 @@ public record Story(Hero hero,
                     Keyboard.pressEnterToContinue();
                 }
                 case 2 -> {
+                    System.out.println("--------------------------");
                     System.out.println("Você decide que não precisa utilizar\n" +
                             "nada que venha das mãos do inimigo.”");
                     Keyboard.pressEnterToContinue();
                 }
                 default -> {
+                    System.out.println("--------------------------");
                     System.out.println("Seja forte! você precisa tomar uma decisão....");
                     Keyboard.pressEnterToContinue();
                     continue;
@@ -233,12 +255,14 @@ public record Story(Hero hero,
             }
             done = true;
         }
+        System.out.println("--------------------------");
         System.out.println("""
                 Em uma mesa, você encontra uma chave dourada, e sabe que aquela chave abre uma das
                 fechaduras da porta do líder inimigo. Você pega a chave e guarda numa pequena bolsa que leva
                 presa ao cinto.""");
         Keyboard.pressEnterToContinue();
 
+        System.out.println("--------------------------");
         System.out.println("""
                 Você retorna à sala anterior e se dirige à porta da esquerda. Você se
                 aproxima, tentando ouvir o que acontece porta adentro, mas não escuta nada. Segura com mais
@@ -249,6 +273,7 @@ public record Story(Hero hero,
                 soldados para aterrorizar a região.""");
         Keyboard.pressEnterToContinue();
 
+        System.out.println("--------------------------");
         System.out.println("No fundo da sala, olhando em sua direção, está outro dos capitães do inimigo. Um orque\n" +
                 "horrendo, de armadura, cajado em punho, em posição de combate. Ele avança em sua direção.");
         Keyboard.pressEnterToContinue();
@@ -259,6 +284,8 @@ public record Story(Hero hero,
         scientstOrcFight.battle();
 
         System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
+
+        System.out.println("--------------------------");
         System.out.println("""
                 Após derrotar o Alquimista, você olha em volta, tentando reconhecer alguma poção do estoque
                 do inimigo. Em uma mesa, você reconhece uma pequena garrafa de vidro contendo um líquido
@@ -274,6 +301,7 @@ public record Story(Hero hero,
             switch (option) {
                 case 1 -> {
                     if (this.hero.getLifePoints() > this.hero.getCharClass().getLifePoints()) {
+                        System.out.println("--------------------------");
                         System.out.println("Os seus pontos de vida são maior do que quando começou, deseja guardar esta poção para mais tarde?");
                         System.out.println("1 - Sim");
                         System.out.println("2 - Não");
@@ -281,21 +309,25 @@ public record Story(Hero hero,
                         Integer choice = Keyboard.scanInteger();
                         if (choice == 1) {
                             this.hero.setItems();
+                            System.out.println("--------------------------");
                             System.out.println("Você aproveitou e repôs seus items");
                             Keyboard.pressEnterToContinue();
                             break;
                         }
                     }
+                    System.out.println("--------------------------");
                     System.out.println("Você se sente revigorado para seguir adiante!");
                     System.out.println();
                     System.out.println("Seus pontos de vida foram recuperados!");
                     Keyboard.pressEnterToContinue();
                 }
                 case 2 -> {
+                    System.out.println("--------------------------");
                     System.out.println("Você fica receoso de beber algo produzido pelo inimigo");
                     Keyboard.pressEnterToContinue();
                 }
                 default -> {
+                    System.out.println("--------------------------");
                     System.out.println("Seja forte! você precisa tomar uma decisão....");
                     Keyboard.pressEnterToContinue();
                     continue;
@@ -303,12 +335,14 @@ public record Story(Hero hero,
             }
             done = true;
         }
+        System.out.println("--------------------------");
         System.out.println("""
                 Ao lado da porta, você vê uma chave dourada em cima de uma mesa, e sabe que aquela chave
                 abre a outra fechadura da porta do líder inimigo. Você pega a chave e guarda na pequena bolsa
                 que leva presa ao cinto.""");
         Keyboard.pressEnterToContinue();
 
+        System.out.println("--------------------------");
         System.out.println("""
                 De volta à sala das portas, você se dirige à porta final. Coloca as chaves nas fechaduras, e a
                 porta se abre. Seu coração acelera, memórias de toda a sua vida passam pela sua mente, e você
@@ -316,19 +350,23 @@ public record Story(Hero hero,
                 no combate que você sabe que irá se seguir, e adentra a porta.""");
         Keyboard.pressEnterToContinue();
 
+        System.out.println("--------------------------");
         System.out.println("Lá dentro, você vê o líder sentado em uma poltrona dourada, com duas fogueiras de cada lado, e\n" +
                 "prisioneiros acorrentados às paredes.");
         Keyboard.pressEnterToContinue();
 
+        System.out.println("--------------------------");
         System.out.println("Ele percebe sua chegada e se levanta com um salto, apanhando seu machado de guerra de\n" +
                 "lâmina dupla.");
 
+        System.out.println("--------------------------");
         System.out.println("1 - Tomar iniciativa e atacar!");
         System.out.println("2 - Esperar ele agir....");
         Combat bossFight = new Combat(this.hero, boss, this.difficulty);
         option = Keyboard.scanInteger();
 
         if (option != 1) {
+            System.out.println("--------------------------");
             System.out.println("Você demorou demias e o inimigo foi mais rápido!");
             bossFight.villainAttack(DiceRoll.roll());
         }
@@ -338,6 +376,7 @@ public record Story(Hero hero,
         Keyboard.pressEnterToContinue();
         switch (this.hero.getPath()) {
             case GLORY -> {
+                System.out.println("--------------------------");
                 System.out.println("""
                         Você obteve sua vingança. Você se ajoelha e cai no choro, invadido por uma
                         sensação de alívio e felicidade. Você se vingou, tudo que sempre quis, está feito. Agora você
@@ -345,15 +384,18 @@ public record Story(Hero hero,
                 Keyboard.pressEnterToContinue();
             }
             case VENGEANCE -> {
+                System.out.println("--------------------------");
                 System.out.println("O êxtase em que você se encontra não cabe dentro de si. Você se ajoelha e grita de\n" +
                         "alegria. A glória o aguarda, você a conquistou");
                 Keyboard.pressEnterToContinue();
             }
         }
 
+        System.out.println("--------------------------");
         System.out.println("Você se levanta, olha para os prisioneiros, vai de um em um e os liberta, e todos vocês saem em\n" +
                 "direção à noite, retornando à cidade. Seu dever está cumprido.");
         Keyboard.pressEnterToContinue();
+        System.out.println("--------------------------");
         System.out.println("FIM");
     }
 
