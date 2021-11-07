@@ -12,5 +12,14 @@ public class DiceRoll {
         return dice;
     }
 
+    public static Integer roll(Integer bound){
+        Random random = new Random();
+        Integer dice = random.nextInt(bound);
+        if (dice == 0){
+            dice = DiceRoll.roll();
+        }
+        return dice;
+    }
+
 
 }

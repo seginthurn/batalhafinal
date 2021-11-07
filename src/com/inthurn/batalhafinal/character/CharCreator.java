@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class CharCreator {
     private static Integer difficulty;
     private static String heroName;
-    private static GenderType gender;
-    private static HeroClass heroClass;
+    private static SexType sex;
+    private static CharClass charClass;
     private static WeaponType weaponType;
 
     public Hero criarHeroi(){
@@ -22,10 +22,10 @@ public class CharCreator {
             numSwitch = scanner.nextInt();
             switch (numSwitch){
                 case 1:
-                    this.gender = GenderType.MALE;
+                    this.sex = SexType.MALE;
                     break;
                 case 2:
-                    this.gender = GenderType.FEMALE;
+                    this.sex = SexType.FEMALE;
                     break;
                 default:
                     System.out.println("Opção Inválida, digite novamente");
@@ -35,7 +35,7 @@ public class CharCreator {
         System.out.println("Insira a classe do herói");
         System.out.println("Insira uma arma para o herói");
 
-        Hero hero = new Hero(this.heroName, HeroClass.WARRIOR, this.gender, WeaponType.WARHAMMER );
+        Hero hero = new Hero(this.heroName, CharClass.WARRIOR, this.sex, WeaponType.WARHAMMER );
         return hero;
     }
 
@@ -56,20 +56,20 @@ public class CharCreator {
         this.heroName = heroName;
     }
 
-    public GenderType getGender() {
-        return gender;
+    public SexType getsex() {
+        return sex;
     }
 
-    public void setGender(GenderType gender) {
-        this.gender = gender;
+    public void setsex(SexType sex) {
+        this.sex = sex;
     }
 
-    public HeroClass getHeroClass() {
-        return heroClass;
+    public CharClass getHeroClass() {
+        return charClass;
     }
 
-    public void setHeroClass(HeroClass heroClass) {
-        this.heroClass = heroClass;
+    public void setHeroClass(CharClass charClass) {
+        this.charClass = charClass;
     }
 
     public WeaponType getWeaponType() {

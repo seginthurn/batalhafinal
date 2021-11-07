@@ -21,8 +21,8 @@ public class Villain extends Character {
     public void showStatus() {
         System.out.println("\n");
         System.out.println("----------------------------------------------");
-        System.out.println("Inimigo: " + this.villainClass.getVilainName());
-        System.out.println("Classe: " + this.villainClass.get);
+        System.out.println("Inimigo: " + this.villainClass.getVillainName());
+        System.out.println("Classe: " + this.villainClass.getClass());
         System.out.println("Arma equipada: " + this.getVillainWeapon().getWeaponName());
         System.out.println("Pontos de Vida: " + this.getLifePoints());
         System.out.println("Pontos da Ataque: " + this.getAttackPoints());
@@ -36,7 +36,7 @@ public class Villain extends Character {
         WeaponType choice;
         Integer option = random.nextInt(8);
         if(option == 0){
-            option = random.nextInt(8);
+            option = random.nextInt(7) + 1;
         }
         switch (option) {
             case 1:

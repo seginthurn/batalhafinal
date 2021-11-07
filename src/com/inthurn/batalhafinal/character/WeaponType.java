@@ -7,12 +7,15 @@ public enum WeaponType {
     CLUB ("Clava", 9, 3),
     BOW_ARROW ("Arco e Flecha" , 12, 1),
     CROSSBOW_BOLTS("Besta e Virotes", 11, 2),
+    DAGGER("Adaga",10,3 ),
     STAFF ("Cajado", 8,5),
+    MAGICAL_ORB("Orb Mágico", 10, 3 ),
     MAGIC_BOOK ("Livro Mágico", 9, 4);
 
     private String weaponName;
     private Integer attackBonus;
     private Integer defenseBonus;
+    private CharClass charClass;
 
     WeaponType(String weaponName, Integer attackBonus, Integer defenseBonus) {
         this.weaponName = weaponName;

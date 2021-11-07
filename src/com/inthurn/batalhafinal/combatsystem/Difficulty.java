@@ -1,7 +1,14 @@
 package com.inthurn.batalhafinal.combatsystem;
 
 public enum Difficulty {
-    EASY(20.0f), MEDIUM(0.0f), HARD(10.0f);
+    EASY("Fácil", 20.0f), MEDIUM("Normal", 0.0f), HARD("Difícil", 10.0f);
+
+    private String description;
+
+    Difficulty(String description, Float difficulty) {
+        this.description = description;
+        this.difficulty = difficulty;
+    }
 
     private Float difficulty;
 
@@ -12,4 +19,8 @@ public enum Difficulty {
     public Float getDifficulty() {
         return difficulty;
     }
+    public String getDescription() {
+        return description;
+    }
+
 }

@@ -1,18 +1,18 @@
 package com.inthurn.batalhafinal.character;
 
-public enum GenderType {
+public enum SexType {
     MALE ("Masculino", "seu próximo herói"), FEMALE ("Feminino", "sua próxima heroína");
 
-    GenderType(String gender, String diesMessage) {
-        this.gender = gender;
+    SexType(String sex, String diesMessage) {
+        this.sex = sex;
         this.diesMessage = diesMessage;
     }
 
-    private String gender;
+    private String sex;
     private String diesMessage;
 
-    public String getGender() {
-        return gender;
+    public String getSex() {
+        return sex;
     }
 
     public String getDiesMessage() {

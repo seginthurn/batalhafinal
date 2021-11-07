@@ -1,26 +1,28 @@
 package com.inthurn.batalhafinal.character;
 
 public enum VillainClass {
-    WAR_ORC("Orc Armeiro", 100, 15, 8), MEDIC_ORC ("Orc ciêntista", 90, 15, 5),  BOSS("O Líder", 150, 20, 10);
+    WAR_ORC("Orc Armeiro", 150, 15, 8),
+    CIENTIST_ORC("Orc ciêntista", 150, 15, 5),
+    BOSS("O Líder", 200, 20, 10);
 
-    private String vilainName;
+    private String villainName;
     private Integer lifePoints;
     private Integer attackPoints;
     private Integer deffensePoints;
 
-    VillainClass(String vilainName, Integer lifePoints, Integer attackPoints, Integer deffensePoints) {
-        this.vilainName = vilainName;
+    VillainClass(String villainName, Integer lifePoints, Integer attackPoints, Integer deffensePoints) {
+        this.villainName = villainName;
         this.lifePoints = lifePoints;
         this.attackPoints = attackPoints;
         this.deffensePoints = deffensePoints;
     }
 
-    public String getVilainName() {
-        return vilainName;
+    public String getVillainName() {
+        return villainName;
     }
 
-    public void setVilainName(String vilainName) {
-        this.vilainName = vilainName;
+    public void setvillainName(String villainName) {
+        this.villainName = villainName;
     }
 
     public Integer getLifePoints() {
@@ -49,8 +51,8 @@ public enum VillainClass {
 
     @Override
     public String toString() {
-        return "VilainClass{" +
-                "vilainName='" + vilainName + '\'' +
+        return "villainClass{" +
+                "villainName='" + villainName + '\'' +
                 ", lifePoints=" + lifePoints +
                 ", attackPoints=" + attackPoints +
                 ", deffensePoints=" + deffensePoints +

@@ -1,25 +1,28 @@
 package com.inthurn.batalhafinal.character;
 
+import com.inthurn.batalhafinal.combatsystem.Difficulty;
 import com.inthurn.batalhafinal.utils.DiceRoll;
 
 public class Hero extends Character {
     private PathType path;
-    private GenderType gender;
+    private SexType sex;
     private Weapon weapon;
-    private HeroClass heroClass;
+    private CharClass charClass;
 
 
-    public Hero(String name, HeroClass heroClass, GenderType gender, WeaponType weaponType) {
+
+    public Hero(String name, CharClass charClass, SexType sex, WeaponType weaponType) {
         super(name);
-        this.heroClass = heroClass;
-        this.setLifePoints(heroClass.getLifePoints());
+        this.charClass = charClass;
+        this.setLifePoints(charClass.getLifePoints());
         this.weapon = new Weapon(weaponType);
-        this.setDefensePoints(heroClass.getDefense() + this.weapon.getDefenseBonus());
-        this.setAttackPoints(heroClass.getAttack() + this.weapon.getAttackBonus());
+        this.setDefensePoints(charClass.getDefense() + this.weapon.getDefenseBonus());
+        this.setAttackPoints(charClass.getAttack() + this.weapon.getAttackBonus());
         this.path = path;
-        this.gender = gender;
+        this.sex = sex;
         this.setDead(false);
     }
+
 
     @Override
     public void showStatus() {
@@ -35,6 +38,7 @@ public class Hero extends Character {
         System.out.println("\n");
     }
 
+
     public PathType getPath() {
         return path;
     }
@@ -43,20 +47,20 @@ public class Hero extends Character {
         this.path = path;
     }
 
-    public GenderType getGender() {
-        return gender;
+    public SexType getsex() {
+        return sex;
     }
 
-    public void setGender(GenderType gender) {
-        this.gender = gender;
+    public void setSex(SexType sex) {
+        this.sex = sex;
     }
 
-    public HeroClass getHeroClass() {
-        return heroClass;
+    public CharClass getHeroClass() {
+        return charClass;
     }
 
-    public void setHeroClass(HeroClass heroClass) {
-        this.heroClass = heroClass;
+    public void setHeroClass(CharClass charClass) {
+        this.charClass = charClass;
     }
 
     public Weapon getWeapon() {
@@ -68,13 +72,4 @@ public class Hero extends Character {
     }
 
 
-    @Override
-    public String toString() {
-        return "Hero{" +
-                "path=" + path +
-                ", gender=" + gender +
-                ", weapon=" + weapon +
-                ", heroClass=" + heroClass +
-                '}';
-    }
 }

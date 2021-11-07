@@ -22,7 +22,9 @@ public class Combat implements CombatActions {
 
     @Override
     public void setDifficultyBonus() {
-        if (this.difficulty.equals(difficulty.EASY)) {
+        if(this.difficulty == null){
+            return;
+        }else if (this.difficulty.equals(difficulty.EASY)) {
             this.hero.setAttackPoints(this.hero.getAttackPoints() + (int) ((this.hero.getAttackPoints() * this.difficulty.getDifficulty()) / 100));
         } else if (this.difficulty.equals(Difficulty.HARD)) {
             this.villain.setAttackPoints(this.villain.getAttackPoints() + (int) ((this.villain.getAttackPoints() * this.difficulty.getDifficulty()) / 100));
@@ -57,6 +59,7 @@ public class Combat implements CombatActions {
                 default:
                     break;
             }
+
             System.out.println("Rolando os dados... ");
             dice = DiceRoll.roll();
             System.out.println("A rolagem dos dados deu:" + dice);
@@ -72,12 +75,6 @@ public class Combat implements CombatActions {
 
         }
         ;
-
-
-    }
-
-    @Override
-    public void attack() {
 
 
     }
@@ -111,6 +108,7 @@ public class Combat implements CombatActions {
 
     }
 
+    //Overdrive
     public void attack(Villain villain, Integer dice) {
         int damage = 0;
 
@@ -127,12 +125,18 @@ public class Combat implements CombatActions {
         this.hero.setLifePoints(this.hero.getLifePoints() - damage);
 
         if (this.hero.getLifePoints() <= 0) {
-            System.out.println(this.hero.getPath().getDiesMessage() + this.hero.getGender().getDiesMessage());
+            System.out.println(this.hero.getPath().getDiesMessage() + this.hero.getsex().getDiesMessage());
         } else {
             System.out.println("O inimigo atacou! Você sofreu " + damage + " de dano e agora possui " + hero.getLifePoints() +
                     " pontos de vida.");
         }
 
+    }
+
+    public static void scenarioAttack(Hero hero){
+        Integer damage = WeaponType.BOW_ARROW.getAttackBonus() + DiceRoll.roll(10);
+        System.out.println("Você tomou " + damage + " de dano!");
+        hero.setLifePoints(damage);
     }
 
     public Difficulty getDifficulty() {
