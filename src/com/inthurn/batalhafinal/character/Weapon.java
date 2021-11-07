@@ -7,16 +7,16 @@ public final class Weapon {
     private Integer defenseBonus;
 
     public Weapon(WeaponType weaponType) {
-        this.weaponType = weaponType;
-        this.weaponName = this.weaponType.getWeaponName();
-        this.attackBonus = this.weaponType.getAttackBonus();
-        this.defenseBonus = this.weaponType.getDefenseBonus();
+        this.setWeaponType(weaponType);
+        this.setWeaponName(this.weaponType.getWeaponName());
+        this.setAttackBonus(this.weaponType.getAttackBonus());
+        this.setDefenseBonus(this.weaponType.getDefenseBonus());
     }
 
-    public static WeaponType[] castWeapons(CharClass character){
+    public static WeaponType[] castWeapons(CharClass character) {
         WeaponType[] weapon = new WeaponType[3];
 
-        switch (character){
+        switch (character) {
             case ARCHER, HUNTER -> {
                 weapon[0] = WeaponType.BOW_ARROW;
                 weapon[1] = WeaponType.CROSSBOW_BOLTS;
