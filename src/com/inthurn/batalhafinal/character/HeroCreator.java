@@ -228,6 +228,7 @@ public final class HeroCreator {
             System.out.println("1 - " + weapon[0].getWeaponName());
             System.out.println("2 - " + weapon[1].getWeaponName());
             System.out.println("3 - " + weapon[2].getWeaponName());
+            System.out.println("4 - " + weapon[3].getWeaponName());
             option = Keyboard.scanInteger();
             this.weaponType = weapon[option - 1];
             System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");

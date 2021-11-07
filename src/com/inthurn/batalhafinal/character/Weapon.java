@@ -14,25 +14,28 @@ public final class Weapon {
     }
 
     public static WeaponType[] castWeapons(CharClass character) {
-        WeaponType[] weapon = new WeaponType[3];
+        WeaponType[] weapon = new WeaponType[4];
 
         switch (character) {
             case ARCHER, HUNTER -> {
                 weapon[0] = WeaponType.BOW_ARROW;
                 weapon[1] = WeaponType.CROSSBOW_BOLTS;
                 weapon[2] = WeaponType.DAGGER;
+                weapon[3] = WeaponType.SPEAR;
             }
 
             case WARRIOR, PALADIN -> {
                 weapon[0] = WeaponType.SWORD;
                 weapon[1] = WeaponType.WARHAMMER;
                 weapon[2] = WeaponType.CLUB;
+                weapon[3] = WeaponType.AXE;
             }
 
             case MAGE, WARLOCK -> {
                 weapon[0] = WeaponType.STAFF;
                 weapon[1] = WeaponType.MAGIC_BOOK;
                 weapon[2] = WeaponType.MAGICAL_ORB;
+                weapon[3] = WeaponType.MAGICAL_BLADE;
             }
 
         }
