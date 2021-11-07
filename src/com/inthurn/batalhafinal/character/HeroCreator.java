@@ -14,13 +14,13 @@ public final class HeroCreator {
 
     public HeroCreator() {
         this.setDifficulty();
-        System.out.println("<-------------------------->");
+        System.out.println("--------------------------");
         this.setName();
-        System.out.println("<-------------------------->");
+        System.out.println("--------------------------");
         this.setSex();
-        System.out.println("<-------------------------->");
+        System.out.println("--------------------------");
         this.setCharClass();
-        System.out.println("<-------------------------->");
+        System.out.println("--------------------------");
         this.setWeaponType();
 
     }
@@ -39,13 +39,13 @@ public final class HeroCreator {
             this.name = Keyboard.scanString();
             if (this.name.isBlank()) {
                 System.out.println("Seu nome não pode estar em branco!");
-                System.out.println("<-------------------------->");
+                System.out.println("--------------------------");
                 continue;
             }
 
             if (CheckNumeric.isNumeric(this.name)) {
                 System.out.println("Seu nome não pode ser um número!");
-                System.out.println("<-------------------------->");
+                System.out.println("--------------------------");
                 continue;
             }
             System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
@@ -64,7 +64,7 @@ public final class HeroCreator {
                     continue;
                 default:
                     System.out.println("Opção inválida, tente novamente");
-                    System.out.println("<-------------------------->");
+                    System.out.println("--------------------------");
             }
 
         }
@@ -85,7 +85,7 @@ public final class HeroCreator {
             System.out.println("1 - Fácil");
             System.out.println("2 - Normal");
             System.out.println("3 - Difícil");
-            System.out.println("<-------------------------->");
+            System.out.println("--------------------------");
             option = Keyboard.scanInteger();
 
             switch (option) {
@@ -94,7 +94,7 @@ public final class HeroCreator {
                 case 3 -> this.difficulty = Difficulty.HARD;
                 default -> {
                     System.out.println("Opção inválida, digite novamente");
-                    System.out.println("<-------------------------->");
+                    System.out.println("--------------------------");
                     continue;
                 }
             }
@@ -103,7 +103,7 @@ public final class HeroCreator {
             System.out.println("Deseja continuar? \n");
             System.out.println("1 - Sim");
             System.out.println("2 - Não");
-            System.out.println("<-------------------------->");
+            System.out.println("--------------------------");
             option = Keyboard.scanInteger();
             switch (option) {
                 case 1:
@@ -113,7 +113,7 @@ public final class HeroCreator {
                     continue;
                 default:
                     System.out.println("Opção inválida, digite novamente");
-                    System.out.println("<-------------------------->");
+                    System.out.println("--------------------------");
 
             }
         }

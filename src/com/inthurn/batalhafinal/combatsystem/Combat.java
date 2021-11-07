@@ -117,7 +117,6 @@ public class Combat implements CombatActions {
             if (villain.getDead()) {
                 break;
             }
-
             System.out.println("Agora é o turno do inimigo");
             System.out.println("\n");
             villainAttack(dice);
@@ -129,6 +128,7 @@ public class Combat implements CombatActions {
 
         if (dice == 20) {
             damage = (int) this.getHero().getAttackPoints() + dice;
+            System.out.println("--------------------------");
             System.out.println("Você acertou um ataque crítico!");
         } else {
             damage = ((this.getHero().getAttackPoints() + dice) - this.getVillain().getDefensePoints());
@@ -137,9 +137,11 @@ public class Combat implements CombatActions {
         this.getVillain().setLifePoints(this.getVillain().getLifePoints() - damage);
         if (this.getVillain().getLifePoints() <= 0) {
             this.getVillain().setDead(true);
+            System.out.println("--------------------------");
             System.out.println("“O inimigo não é páreo para o seu heroísmo, e jaz imóvel aos seus pés.");
         } else {
-            System.out.println("Você o atacaou com " + this.getHero().getWeaponType().getAttackMessage() + "causando " + damage + " de dano!");
+            System.out.println("--------------------------");
+            System.out.println("Você o atacou com " + this.getHero().getWeaponType().getAttackMessage() + "causando " + damage + " de dano!");
         }
         Keyboard.pressEnterToContinue();
 
@@ -149,17 +151,21 @@ public class Combat implements CombatActions {
         int damage;
 
         if (dice == 1) {
+
+            System.out.println("--------------------------");
             System.out.println("O inimigo errou o ataque! Você não sofreu dano");
             Keyboard.pressEnterToContinue();
             return;
         } else if (dice == 20) {
             damage = (int) this.getVillain().getAttackPoints() + dice;
+            System.out.println("--------------------------");
             System.out.println("O inimigo acertou um ataque crítico! Você sofreu " + damage + " de dano e agora possui " + hero.getLifePoints() + " pontos de vida");
             this.getHero().setLifePoints(this.getHero().getLifePoints() - damage);
             Keyboard.pressEnterToContinue();
         } else {
             damage = (this.getVillain().getAttackPoints() + dice) - this.getHero().getDefensePoints();
             if (damage < 0) {
+                System.out.println("--------------------------");
                 System.out.println("O inimigo acertou o ataque, mas sua defesa foi perfeita e ele não conseguiu te atingir");
                 return;
             }
@@ -173,6 +179,7 @@ public class Combat implements CombatActions {
             GameLogo.gameOver();
             System.exit(0);
         } else {
+            System.out.println("--------------------------");
             System.out.println("O inimigo atacou! Você sofreu " + damage + " de dano e agora possui " + hero.getLifePoints() +
                     " pontos de vida.");
             Keyboard.pressEnterToContinue();
@@ -189,6 +196,7 @@ public class Combat implements CombatActions {
 
     public static void scenarioAttack(Hero hero) {
         Integer damage = WeaponType.BOW_ARROW.getAttackBonus() + DiceRoll.roll(10);
+        System.out.println("--------------------------");
         System.out.println("Você tomou " + damage + " de dano!");
         hero.setLifePoints(hero.getLifePoints() - damage);
     }

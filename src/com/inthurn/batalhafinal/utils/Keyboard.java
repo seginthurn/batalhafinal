@@ -36,12 +36,10 @@ public class Keyboard {
     public static void pressEnterToContinue() {
         System.out.println("\n");
         System.out.println("Aperte \"ENTER\" para continuar...");
-        try {
-            System.in.read();
-        } catch (Exception e) {
-
-        }
+        Scanner s = new Scanner(System.in);
+        s.nextLine();
         System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
+
     }
 
 
