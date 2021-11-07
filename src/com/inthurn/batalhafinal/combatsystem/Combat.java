@@ -1,11 +1,11 @@
 package com.inthurn.batalhafinal.combatsystem;
 
 import com.inthurn.batalhafinal.character.*;
+import com.inthurn.batalhafinal.itens.ItemTypes;
 import com.inthurn.batalhafinal.utils.DiceRoll;
+import com.inthurn.batalhafinal.utils.GameLogo;
+import com.inthurn.batalhafinal.utils.Keyboard;
 
-import java.lang.Character;
-import java.util.Random;
-import java.util.Scanner;
 
 public class Combat implements CombatActions {
     private Difficulty difficulty;
@@ -13,130 +13,184 @@ public class Combat implements CombatActions {
     private Villain villain;
 
     public Combat(Hero hero, Villain villain, Difficulty difficulty) {
-        this.difficulty = difficulty;
-        this.hero = hero;
-        this.villain = villain;
+        this.setDifficulty(difficulty);
+        this.setHero(hero);
+        this.setVillain(villain);
         this.setDifficultyBonus();
     }
 
+    @Override
+    public void useItem() {
+        Integer option;
+        System.out.println("Você verifcou sua mochila..");
+        System.out.println("\n");
+        hero.listItem();
+        System.out.println("---------------------------");
+
+        System.out.println("Selecione o item para usar: ");
+        System.out.println("1 - " + ItemTypes.LIFEPOTION.getDescription());
+        System.out.println("2 - " + ItemTypes.ATTACKPOTION.getDescription());
+        System.out.println("3 - " + ItemTypes.DEFENSEPOTION.getDescription());
+        System.out.println("\n");
+        System.out.println("4 - Voltar");
+
+        option = Keyboard.scanInteger();
+        switch (option) {
+            case 1 -> hero.useItem(ItemTypes.LIFEPOTION);
+            case 2 -> hero.useItem(ItemTypes.ATTACKPOTION);
+            case 3 -> hero.useItem(ItemTypes.DEFENSEPOTION);
+            case 4 -> this.battle();
+            default -> {
+                System.out.println("Item inválido");
+                this.useItem();
+            }
+        }
+
+
+    }
 
     @Override
     public void setDifficultyBonus() {
-        if(this.difficulty == null){
-            return;
-        }else if (this.difficulty.equals(difficulty.EASY)) {
-            this.hero.setAttackPoints(this.hero.getAttackPoints() + (int) ((this.hero.getAttackPoints() * this.difficulty.getDifficulty()) / 100));
-        } else if (this.difficulty.equals(Difficulty.HARD)) {
-            this.villain.setAttackPoints(this.villain.getAttackPoints() + (int) ((this.villain.getAttackPoints() * this.difficulty.getDifficulty()) / 100));
+        if (this.getDifficulty().equals(Difficulty.EASY)) {
+            this.getHero().setAttackPoints(this.getHero().getAttackPoints() + (int) ((this.getHero().getAttackPoints() * this.getDifficulty().getDifficulty()) / 100));
+        } else if (this.getDifficulty().equals(Difficulty.HARD)) {
+            this.getVillain().setAttackPoints(this.getVillain().getAttackPoints() + (int) ((this.getVillain().getAttackPoints() * this.getDifficulty().getDifficulty()) / 100));
         }
     }
 
     @Override
     public void battle() {
-        Scanner scanner = new Scanner(System.in);
         Integer option;
         Integer dice;
 
-        while (hero.getDead() == false && villain.getDead() == false) {
+        while (!hero.getDead() && !villain.getDead()) {
+            System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
+            System.out.println("---------------------------");
             System.out.println("Insira uma ação");
             System.out.println("1 - Atacar");
-            System.out.println("2 - Ver Status");
-            System.out.println("3 - Olhar para o inimigo");
-            System.out.println("3 - Fugir");
-            option = scanner.nextInt();
+            System.out.println("2 - Usar items");
+            System.out.println("3 - Ver Status");
+            System.out.println("4 - Olhar para o inimigo");
+            System.out.println("5 - Fugir");
+            option = Keyboard.scanInteger();
+            dice = DiceRoll.roll();
+            System.out.println("---------------------------");
 
-            switch (option){
-                case 2:
-                    this.hero.showStatus();
+            switch (option) {
+                case 1 -> {
+                    System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
+                    System.out.println("---------------------------");
+                    System.out.println("Rolando os dados... ");
+                    System.out.println("A rolagem dos dados deu: " + dice);
+                    attack(dice);
+                    System.out.println("---------------------------");
+                }
+                case 2 -> {
+                    System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
+                    System.out.println("---------------------------");
+                    this.useItem();
+                }
+                case 3 -> {
+                    System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
+                    this.getHero().showStatus();
+                    Keyboard.pressEnterToContinue();
                     continue;
-                case 3:
-                    this.villain.showStatus();
+                }
+                case 4 -> {
+                    System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
+                    this.getVillain().showStatus();
+                    Keyboard.pressEnterToContinue();
                     continue;
-                case 4:
-                    System.out.println("você fugiu!");
-                    this.hero.setDead(true);
-                    return;
-                default:
-                    break;
+                }
+                case 5 -> {
+                    System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
+                    System.out.println("---------------------------");
+                    System.out.println("Você não estava preparado para a força do inimigo, e decide fugir para que possa tentar novamente em uma próxima vez.");
+                    GameLogo.gameOver();
+                    System.out.println("---------------------------");
+                    System.exit(0);
+                }
+                default -> {
+                }
             }
 
-            System.out.println("Rolando os dados... ");
-            dice = DiceRoll.roll();
-            System.out.println("A rolagem dos dados deu:" + dice);
-            attack(hero, dice);
-
-            if (villain.getDead() == true) {
-                System.out.println("Morreu!");
+            if (villain.getDead()) {
                 break;
             }
 
             System.out.println("Agora é o turno do inimigo");
-            attack(villain, dice);
-
+            System.out.println("\n");
+            villainAttack(dice);
         }
-        ;
-
-
     }
 
-    //Overdrive
-    public void attack(Hero hero, Integer dice) {
-        int damage = 0;
+    public void attack(Integer dice) {
+        int damage;
 
         if (dice == 20) {
-            damage = (int) this.hero.getAttackPoints() + dice;
-        } else if (dice > 1 || dice < 20) {
-            System.out.println("\n");
-            System.out.println("----------------------------------------------------");
-            System.out.println("Dados " + dice);
-            System.out.println("Defesa do vilão " + this.villain.getDefensePoints());
-            System.out.println("Ataque do herói " + this.hero.getAttackPoints());
-            damage = ((this.hero.getAttackPoints() + dice) - this.villain.getDefensePoints());
-            System.out.println("Dano: " + damage );
-            System.out.println("----------------------------------------------------");
-
-        }
-        System.out.println(damage);
-        this.villain.setLifePoints(this.villain.getLifePoints() - damage);
-
-        if (this.villain.getLifePoints() <= 0) {
-            this.villain.setDead(true);
-            System.out.println("Parabéns o vilão morreu!");
+            damage = (int) this.getHero().getAttackPoints() + dice;
+            System.out.println("Você acertou um ataque crítico!");
         } else {
-            System.out.println("O inimigo sofreu " + damage + " de dano e agora tem " + this.villain.getLifePoints() + " pontos de vida");
+            damage = ((this.getHero().getAttackPoints() + dice) - this.getVillain().getDefensePoints());
+
         }
+        this.getVillain().setLifePoints(this.getVillain().getLifePoints() - damage);
+        if (this.getVillain().getLifePoints() <= 0) {
+            this.getVillain().setDead(true);
+            System.out.println("“O inimigo não é páreo para o seu heroísmo, e jaz imóvel aos seus pés.");
+        } else {
+            System.out.println("Você o atacaou com " + this.getHero().getWeaponType().getAttackMessage() + "causando " + damage + " de dano!");
+        }
+        Keyboard.pressEnterToContinue();
 
     }
 
-    //Overdrive
-    public void attack(Villain villain, Integer dice) {
-        int damage = 0;
+    public void villainAttack(Integer dice) {
+        int damage;
 
         if (dice == 1) {
             System.out.println("O inimigo errou o ataque! Você não sofreu dano");
+            Keyboard.pressEnterToContinue();
+            return;
         } else if (dice == 20) {
-            damage = (int) this.villain.getAttackPoints() + dice;
+            damage = (int) this.getVillain().getAttackPoints() + dice;
             System.out.println("O inimigo acertou um ataque crítico! Você sofreu " + damage + " de dano e agora possui " + hero.getLifePoints() + " pontos de vida");
-            this.hero.setLifePoints(this.hero.getLifePoints() - damage);
-        } else if (dice > 1 || dice < 20) {
-            damage = (this.villain.getAttackPoints() + dice) - this.hero.getDefensePoints();
+            this.getHero().setLifePoints(this.getHero().getLifePoints() - damage);
+            Keyboard.pressEnterToContinue();
+        } else {
+            damage = (this.getVillain().getAttackPoints() + dice) - this.getHero().getDefensePoints();
+            if (damage < 0) {
+                System.out.println("O inimigo acertou o ataque, mas sua defesa foi perfeita e ele não conseguiu te atingir");
+                return;
+            }
         }
 
-        this.hero.setLifePoints(this.hero.getLifePoints() - damage);
+        this.getHero().setLifePoints(this.getHero().getLifePoints() - damage);
 
-        if (this.hero.getLifePoints() <= 0) {
-            System.out.println(this.hero.getPath().getDiesMessage() + this.hero.getsex().getDiesMessage());
+        if (this.getHero().getLifePoints() <= 0) {
+            System.out.println("O inimigo atacou...");
+            showDiesMessage();
+            GameLogo.gameOver();
+            System.exit(0);
         } else {
             System.out.println("O inimigo atacou! Você sofreu " + damage + " de dano e agora possui " + hero.getLifePoints() +
                     " pontos de vida.");
+            Keyboard.pressEnterToContinue();
         }
 
     }
 
-    public static void scenarioAttack(Hero hero){
+    public void showDiesMessage() {
+        switch (this.getHero().getPath()) {
+            case VENGEANCE -> System.out.println("Não foi possível concluir sua vingança, e agora resta saber se alguém se vingará por você.");
+            case GLORY -> System.out.println("A glória que buscavas não será sua e a cidade aguarda por " + this.getHero().getSex().getDiesMessage());
+        }
+    }
+
+    public static void scenarioAttack(Hero hero) {
         Integer damage = WeaponType.BOW_ARROW.getAttackBonus() + DiceRoll.roll(10);
         System.out.println("Você tomou " + damage + " de dano!");
-        hero.setLifePoints(damage);
+        hero.setLifePoints(hero.getLifePoints() - damage);
     }
 
     public Difficulty getDifficulty() {

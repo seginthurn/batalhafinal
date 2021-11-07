@@ -1,6 +1,9 @@
 package com.inthurn.batalhafinal.character;
 
+
 import java.util.Random;
+
+import com.inthurn.batalhafinal.itens.ItemTypes;
 
 public class Villain extends Character {
     private VillainClass villainClass;
@@ -8,8 +11,8 @@ public class Villain extends Character {
 
     public Villain(String name, VillainClass villainClass) {
         super(name);
-        this.villainClass = villainClass;
-        this.villainWeapon = randomWeapon();
+        this.setVillainClass(villainClass);
+        this.setVillainWeapon(randomWeapon());
         this.setLifePoints(this.villainClass.getLifePoints());
         this.setAttackPoints(this.villainClass.getAttackPoints() + this.villainWeapon.getAttackBonus());
         this.setDefensePoints(this.villainClass.getDeffensePoints() + this.villainWeapon.getDefenseBonus());
@@ -22,7 +25,6 @@ public class Villain extends Character {
         System.out.println("\n");
         System.out.println("----------------------------------------------");
         System.out.println("Inimigo: " + this.villainClass.getVillainName());
-        System.out.println("Classe: " + this.villainClass.getClass());
         System.out.println("Arma equipada: " + this.getVillainWeapon().getWeaponName());
         System.out.println("Pontos de Vida: " + this.getLifePoints());
         System.out.println("Pontos da Ataque: " + this.getAttackPoints());
@@ -31,11 +33,11 @@ public class Villain extends Character {
         System.out.println("\n");
     }
 
-    private final Weapon randomWeapon() {
+    private Weapon randomWeapon() {
         Random random = new Random();
         WeaponType choice;
-        Integer option = random.nextInt(8);
-        if(option == 0){
+        int option = random.nextInt(8);
+        if (option == 0) {
             option = random.nextInt(7) + 1;
         }
         switch (option) {
@@ -67,11 +69,17 @@ public class Villain extends Character {
                 return null;
         }
 
+        return new Weapon(choice);
 
+    }
 
+    @Override
+    public void useItem(ItemTypes itemTypes) {
 
-        Weapon villainWeapon = new Weapon(choice);
-        return villainWeapon;
+    }
+
+    @Override
+    public void listItem() {
 
     }
 
@@ -91,11 +99,4 @@ public class Villain extends Character {
         this.villainWeapon = villainWeapon;
     }
 
-    @Override
-    public String toString() {
-        return "Vilain{" +
-                "vilainClass=" + villainClass +
-                ", villainWeapon=" + villainWeapon +
-                '}';
-    }
 }

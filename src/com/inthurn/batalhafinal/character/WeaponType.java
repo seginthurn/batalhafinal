@@ -1,49 +1,45 @@
 package com.inthurn.batalhafinal.character;
 
 public enum WeaponType {
-    SWORD("Espada", 7, 5),
-    AXE("Machado", 8, 4),
-    WARHAMMER("Machado de Guerra", 10, 2),
-    CLUB ("Clava", 9, 3),
-    BOW_ARROW ("Arco e Flecha" , 12, 1),
-    CROSSBOW_BOLTS("Besta e Virotes", 11, 2),
-    DAGGER("Adaga",10,3 ),
-    STAFF ("Cajado", 8,5),
-    MAGICAL_ORB("Orb Mágico", 10, 3 ),
-    MAGIC_BOOK ("Livro Mágico", 9, 4);
+    SWORD("Espada", 7, 5, " com sua ESPADA "),
+    AXE("Machado", 8, 4, " com seu MACHADO "),
+    WARHAMMER("Machado de Guerra", 10, 2, " com seu MARTELO DE GUERRA "),
+    CLUB("Clava", 9, 3, " com sua CLAVA "),
+    BOW_ARROW("Arco e Flecha", 12, 1, " com seu ARCO, e a FLECHA o atingiu "),
+    CROSSBOW_BOLTS("Besta e Virotes", 11, 2, " com sua BESTA, e o VIROTE o atingiu "),
+    DAGGER("Adaga", 10, 3, " com sua ADAGA "),
+    STAFF("Cajado", 8, 5, " com seu CAJADO, lançando uma bola de fogo e "),
+    MAGICAL_ORB("Orb Mágico", 10, 3, " sugando a energia dele com seu ORBE MÁGICO, "),
+    MAGIC_BOOK("Livro Mágico", 9, 4, " absorvendo energia do LIVRO com uma mão e liberando com a outra ");
 
-    private String weaponName;
-    private Integer attackBonus;
-    private Integer defenseBonus;
-    private CharClass charClass;
+    private final String weaponName;
+    private final Integer attackBonus;
+    private final Integer defenseBonus;
+    private final String attackMessage;
 
-    WeaponType(String weaponName, Integer attackBonus, Integer defenseBonus) {
+    WeaponType(String weaponName, Integer attackBonus, Integer defenseBonus, String attackMessage) {
         this.weaponName = weaponName;
         this.attackBonus = attackBonus;
         this.defenseBonus = defenseBonus;
+        this.attackMessage = attackMessage;
     }
 
     public String getWeaponName() {
         return weaponName;
     }
 
-    public void setWeaponName(String weaponName) {
-        this.weaponName = weaponName;
-    }
 
     public Integer getAttackBonus() {
         return attackBonus;
     }
 
-    public void setAttackBonus(Integer attackBonus) {
-        this.attackBonus = attackBonus;
-    }
 
     public Integer getDefenseBonus() {
         return defenseBonus;
     }
 
-    public void setDefenseBonus(Integer defenseBonus) {
-        this.defenseBonus = defenseBonus;
+
+    public String getAttackMessage() {
+        return attackMessage;
     }
 }
