@@ -1,9 +1,9 @@
-package com.inthurn.batalhafinal.utils;
+package com.inthurn.batalhafinal.character;
 
-import com.inthurn.batalhafinal.character.*;
 import com.inthurn.batalhafinal.combatsystem.Difficulty;
+import com.inthurn.batalhafinal.utils.CheckNumeric;
+import com.inthurn.batalhafinal.utils.Keyboard;
 
-import java.util.Scanner;
 
 public final class HeroCreator {
     private String name;
@@ -11,7 +11,6 @@ public final class HeroCreator {
     private SexType sex;
     private CharClass charClass;
     private WeaponType weaponType;
-    private Scanner scanner = new Scanner(System.in);
 
     public HeroCreator() {
         this.setDifficulty();
@@ -33,23 +32,23 @@ public final class HeroCreator {
 
     public void setName() {
         Integer option;
-        Boolean exit = false;
+        boolean exit = false;
 
-        while (exit == false) {
+        while (!exit) {
             System.out.println("Escolha o seu nome: ");
             this.name = Keyboard.scanString();
-            if(this.name.isBlank()){
+            if (this.name.isBlank()) {
                 System.out.println("Seu nome não pode estar em branco!");
                 System.out.println("<-------------------------->");
                 continue;
             }
 
-            if(CheckNumeric.isNumeric(this.name)){
+            if (CheckNumeric.isNumeric(this.name)) {
                 System.out.println("Seu nome não pode ser um número!");
                 System.out.println("<-------------------------->");
                 continue;
             }
-
+            System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
             System.out.println("O seu nome será: " + this.getName() + " e não poderá ser alterado.");
             System.out.println("Deseja continuar?");
             System.out.println("1 - Sim, " + this.getName() + " é um bom nome!");
@@ -57,7 +56,7 @@ public final class HeroCreator {
 
             option = Keyboard.scanInteger();
 
-            switch (option){
+            switch (option) {
                 case 1:
                     exit = true;
                     break;
@@ -69,6 +68,7 @@ public final class HeroCreator {
             }
 
         }
+        System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
     }
 
     public Difficulty getDifficulty() {
@@ -76,10 +76,10 @@ public final class HeroCreator {
     }
 
     public void setDifficulty() {
-        Boolean exit = false;
-        Integer option = 0;
+        boolean exit = false;
+        Integer option;
 
-        while (exit == false) {
+        while (!exit) {
             System.out.println("Escolha seu nível de dificuldade \n");
 
             System.out.println("1 - Fácil");
@@ -89,21 +89,16 @@ public final class HeroCreator {
             option = Keyboard.scanInteger();
 
             switch (option) {
-                case 1:
-                    this.difficulty = Difficulty.EASY;
-                    break;
-                case 2:
-                    this.difficulty = Difficulty.MEDIUM;
-                    break;
-                case 3:
-                    this.difficulty = Difficulty.HARD;
-                    break;
-                default:
+                case 1 -> this.difficulty = Difficulty.EASY;
+                case 2 -> this.difficulty = Difficulty.MEDIUM;
+                case 3 -> this.difficulty = Difficulty.HARD;
+                default -> {
                     System.out.println("Opção inválida, digite novamente");
                     System.out.println("<-------------------------->");
                     continue;
+                }
             }
-            System.out.println("<-------------------------->");
+            System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
             System.out.println("A dificuldade será configurada para  " + this.difficulty.getDescription() + " e não poderá ser alterada.");
             System.out.println("Deseja continuar? \n");
             System.out.println("1 - Sim");
@@ -122,6 +117,7 @@ public final class HeroCreator {
 
             }
         }
+        System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
     }
 
     public SexType getSex() {
@@ -137,17 +133,14 @@ public final class HeroCreator {
         option = Keyboard.scanInteger();
 
         switch (option) {
-            case 1:
-                this.sex = SexType.MALE;
-                break;
-            case 2:
-                this.sex = SexType.FEMALE;
-                break;
-            default:
+            case 1 -> this.sex = SexType.MALE;
+            case 2 -> this.sex = SexType.FEMALE;
+            default -> {
                 System.out.println("Opção inválida, tente novamente");
                 setSex();
+            }
         }
-
+        System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
         System.out.println("O sexo escolhido foi: " + this.getSex().getSex() + " deseja alterar?");
         System.out.println("1 - Sim");
         System.out.println("2 - Não");
@@ -164,6 +157,7 @@ public final class HeroCreator {
                 System.out.println("Opção inválida, tente novamente");
                 setSex();
         }
+        System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
     }
 
     public CharClass getCharClass() {
@@ -172,47 +166,36 @@ public final class HeroCreator {
 
     public void setCharClass() {
         Integer option;
-        Boolean done = false;
+        boolean done = false;
 
-        while (!done){
+        while (!done) {
             System.out.println("Selecione a sua Classe: \n");
+
             for (CharClass s : CharClass.values()) {
                 System.out.println((s.ordinal() + 1) + " - " + s.getType());
             }
 
             option = Keyboard.scanInteger();
 
-            switch (option){
-                case 1:
-                    this.charClass = CharClass.ARCHER;
-                    break;
-                case 2:
-                    this.charClass = CharClass.HUNTER;
-                    break;
-                case 3:
-                    this.charClass = CharClass.WARRIOR;
-                    break;
-                case 4:
-                    this.charClass = CharClass.PALADIN;
-                    break;
-                case 5:
-                    this.charClass = CharClass.MAGE;
-                    break;
-                case 7:
-                    this.charClass = CharClass.WARLOCK;
-                    break;
-                default:
+            switch (option) {
+                case 1 -> this.charClass = CharClass.ARCHER;
+                case 2 -> this.charClass = CharClass.HUNTER;
+                case 3 -> this.charClass = CharClass.WARRIOR;
+                case 4 -> this.charClass = CharClass.PALADIN;
+                case 5 -> this.charClass = CharClass.MAGE;
+                case 6 -> this.charClass = CharClass.WARLOCK;
+                default -> {
                     System.out.println("Opção inválida, digite novamente");
                     continue;
-
+                }
             }
-
+            System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
             System.out.println("A Classe escolhida foi: " + this.charClass.getType());
             System.out.println("Deseja alterar?");
             System.out.println("1 - Sim");
             System.out.println("2 - Não");
             option = Keyboard.scanInteger();
-            switch (option){
+            switch (option) {
                 case 1:
                     this.setCharClass();
                     break;
@@ -224,6 +207,7 @@ public final class HeroCreator {
             }
             done = true;
         }
+        System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
 
     }
 
@@ -232,12 +216,12 @@ public final class HeroCreator {
     }
 
     public void setWeaponType() {
-        Boolean done = false;
+        boolean done = false;
         Integer option;
 
-        while (!done){
+        while (!done) {
             System.out.println("Selecione a sua Arma: \n");
-            WeaponType [] weapon;
+            WeaponType[] weapon;
 
             weapon = Weapon.castWeapons(this.charClass);
 
@@ -246,13 +230,14 @@ public final class HeroCreator {
             System.out.println("3 - " + weapon[2].getWeaponName());
             option = Keyboard.scanInteger();
             this.weaponType = weapon[option - 1];
+            System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
             System.out.println("A arma escolhida foi: " + this.weaponType.getWeaponName());
             System.out.println("Deseja alterar? \n");
             System.out.println("1 - Sim");
             System.out.println("2 - Não");
             option = Keyboard.scanInteger();
 
-            switch (option){
+            switch (option) {
                 case 1:
                     this.setWeaponType();
                     break;
@@ -264,6 +249,7 @@ public final class HeroCreator {
             }
             done = true;
         }
+        System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
 
 
     }

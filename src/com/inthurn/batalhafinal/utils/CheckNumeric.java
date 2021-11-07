@@ -1,6 +1,5 @@
 package com.inthurn.batalhafinal.utils;
 
-import java.util.Scanner;
 
 public class CheckNumeric {
 

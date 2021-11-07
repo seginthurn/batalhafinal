@@ -1,6 +1,13 @@
 package com.inthurn.batalhafinal.character;
 
+import com.inthurn.batalhafinal.itens.ItemTypes;
+
 public interface CharActions {
 
-    public abstract void showStatus();
+    void showStatus();
+
+    void useItem(ItemTypes itemTypes);
+
+    void listItem();
+
 }

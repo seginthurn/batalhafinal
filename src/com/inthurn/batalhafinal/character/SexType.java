@@ -8,8 +8,8 @@ public enum SexType {
         this.diesMessage = diesMessage;
     }
 
-    private String sex;
-    private String diesMessage;
+    private final String sex;
+    private final String diesMessage;
 
     public String getSex() {
         return sex;

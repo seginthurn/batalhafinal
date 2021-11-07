@@ -8,7 +8,7 @@ public abstract class Character implements CharActions{
     private Boolean isDead;
 
     public Character(String name) {
-        this.name = name;
+        this.setName(name);
     }
 
     public String getName() {

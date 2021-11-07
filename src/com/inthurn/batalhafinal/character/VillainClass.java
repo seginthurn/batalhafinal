@@ -5,10 +5,10 @@ public enum VillainClass {
     CIENTIST_ORC("Orc ciêntista", 150, 15, 5),
     BOSS("O Líder", 200, 20, 10);
 
-    private String villainName;
-    private Integer lifePoints;
-    private Integer attackPoints;
-    private Integer deffensePoints;
+    private final String villainName;
+    private final Integer lifePoints;
+    private final Integer attackPoints;
+    private final Integer deffensePoints;
 
     VillainClass(String villainName, Integer lifePoints, Integer attackPoints, Integer deffensePoints) {
         this.villainName = villainName;
@@ -21,41 +21,19 @@ public enum VillainClass {
         return villainName;
     }
 
-    public void setvillainName(String villainName) {
-        this.villainName = villainName;
-    }
 
     public Integer getLifePoints() {
         return lifePoints;
-    }
-
-    public void setLifePoints(Integer lifePoints) {
-        this.lifePoints = lifePoints;
     }
 
     public Integer getAttackPoints() {
         return attackPoints;
     }
 
-    public void setAttackPoints(Integer attackPoints) {
-        this.attackPoints = attackPoints;
-    }
 
     public Integer getDeffensePoints() {
         return deffensePoints;
     }
 
-    public void setDeffensePoints(Integer deffensePoints) {
-        this.deffensePoints = deffensePoints;
-    }
 
-    @Override
-    public String toString() {
-        return "villainClass{" +
-                "villainName='" + villainName + '\'' +
-                ", lifePoints=" + lifePoints +
-                ", attackPoints=" + attackPoints +
-                ", deffensePoints=" + deffensePoints +
-                '}';
-    }
 }
