@@ -13,7 +13,31 @@ Entre nessa jornada pra combater O LÍDER e seus capangas e impedí-los de causa
 
 ## Observação:
 
-Para rodar corretamente este jogo no ECPLISE IDE é necessário habilitar o uso du UTF-8, para isto, siga as instruções abaixo:
+Para rodar corretamente este jogo no ECPLISE IDE é necessário habilitar o uso do UTF-8, para isto, siga as instruções abaixo:
 
 Vá para Window -> Preferences -> General -> Workspace -> TextFileEncoding
+
 Marque a opção UTF-8
+
+## 🚀 Jogando o Batalha Final
+
+Para jogar o Batalha final, execute o arquivo Main.java com sua IDE de preferência ou execute os seguintes comandos via CMD/TERMINAL:
+
+Windows:
+```
+//Entre na pasta src do projeto:
+//ex:
+cd C:\Users\jhondoe\Documents\batalhafinal\src
+
+//Execute o comando:
+javac -encoding utf8 .\com\inthurn\batalhafinal\main\Main.java
+
+//Alternativo:
+javac -encoding utf8 ./com/inthurn/batalhafinal/main/Main.java
+
+//Depoins inicie o jogo com o comando:
+java ./com/inthurn/batalhafinal/main/Main.java
+
+
+
+```
